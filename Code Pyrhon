@@ -1,0 +1,28 @@
+# Get the dimensions of the matrix
+rows = int(input("Enter the number of rows: "))
+cols = int(input("Enter the number of columns: "))
+
+# Initialize the matrix with zeros
+matrix = [[0 for j in range(cols)] for i in range(rows)]
+
+# Input the matrix elements
+for i in range(rows):
+    for j in range(cols):
+        matrix[i][j] = int(input(f"Enter element at position ({i+1},{j+1}): "))
+
+# Print the original matrix
+print("Original Matrix:")
+for i in range(rows):
+    for j in range(cols):
+        print(matrix[i][j], end="\t")
+    print()
+
+# Calculate and print the sum of elements in each row
+for i in range(rows):
+    row_sum = sum(matrix[i])
+    print(f"Sum of elements in row {i+1}: {row_sum}")
+
+# Calculate and print the sum of elements in each column
+for j in range(cols):
+    col_sum = sum(matrix[i][j] for i in range(rows))
+    print(f"Sum of elements in column {j+1}: {col_sum}")
